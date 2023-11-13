@@ -7,3 +7,4 @@ create_tables()
 
 asyncio.run(insert_data())
 
+print("Hello world Alex")
