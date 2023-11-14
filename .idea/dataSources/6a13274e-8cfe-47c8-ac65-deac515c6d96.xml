@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.45">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>738</IntrospectionStateNumber>
+      <IntrospectionStateNumber>749</IntrospectionStateNumber>
       <ServerVersion>14.1</ServerVersion>
       <StartupTime>1699957206</StartupTime>
       <TimeZones>true ACDT
@@ -802,7 +802,7 @@ false posixrules
 13390||10|C|G
 13390||-9223372036854775808|U|G
 13390||10|U|G</Grants>
-      <IntrospectionStateNumber>738</IntrospectionStateNumber>
+      <IntrospectionStateNumber>749</IntrospectionStateNumber>
       <ObjectId>13756</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4227,54 +4227,155 @@ false posixrules
     <schema id="261" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>738</IntrospectionStateNumber>
+      <IntrospectionStateNumber>749</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>527</StateNumber>
       <OwnerName>postgres</OwnerName>
     </schema>
-    <sequence id="262" parent="261" name="workers_id_seq">
+    <object-type id="262" parent="261" name="workload">
+      <Labels>part_time
+full_time</Labels>
+      <ObjectId>16421</ObjectId>
+      <StateNumber>748</StateNumber>
+      <SubCategory>enum</SubCategory>
+      <SubKind>enum</SubKind>
+      <OwnerName>postgres</OwnerName>
+    </object-type>
+    <sequence id="263" parent="261" name="resumes_id_seq">
       <DasType>integer|0s</DasType>
-      <ObjectId>16384</ObjectId>
-      <StateNumber>737</StateNumber>
+      <ObjectId>16434</ObjectId>
+      <StateNumber>748</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <table id="263" parent="261" name="workers">
-      <ObjectId>16385</ObjectId>
-      <StateNumber>737</StateNumber>
+    <sequence id="264" parent="261" name="workers_id_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>16425</ObjectId>
+      <StateNumber>748</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <table id="265" parent="261" name="resumes">
+      <ObjectId>16435</ObjectId>
+      <StateNumber>748</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="264" parent="263" name="id">
+    <table id="266" parent="261" name="workers">
+      <ObjectId>16426</ObjectId>
+      <StateNumber>748</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <column id="267" parent="265" name="id">
+      <DasType>integer|0s</DasType>
+      <DefaultExpression>nextval(&apos;resumes_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>748</StateNumber>
+      <SequenceId>16434</SequenceId>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="268" parent="265" name="title">
+      <DasType>varchar|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>748</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="269" parent="265" name="compensations">
+      <DasType>integer|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>748</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="270" parent="265" name="workload">
+      <DasType>workload|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>748</StateNumber>
+      <TypeId>16421</TypeId>
+    </column>
+    <column id="271" parent="265" name="worker_id">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StateNumber>748</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="272" parent="265" name="create_at">
+      <DasType>timestamp|0s</DasType>
+      <DefaultExpression>timezone(&apos;uts&apos;::text, now())</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StateNumber>748</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="273" parent="265" name="updated_at">
+      <DasType>timestamp|0s</DasType>
+      <DefaultExpression>timezone(&apos;uts&apos;::text, now())</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StateNumber>748</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <foreign-key id="274" parent="265" name="resumes_worker_id_fkey">
+      <ColNames>worker_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16445</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>748</StateNumber>
+      <RefTableId>16426</RefTableId>
+      <RefTableName>workers</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="275" parent="265" name="resumes_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16443</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>748</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="276" parent="265" name="resumes_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16444</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>748</StateNumber>
+      <UnderlyingIndexId>16443</UnderlyingIndexId>
+    </key>
+    <column id="277" parent="266" name="id">
       <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;workers_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>737</StateNumber>
-      <SequenceId>16384</SequenceId>
+      <StateNumber>748</StateNumber>
+      <SequenceId>16425</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="265" parent="263" name="username">
+    <column id="278" parent="266" name="username">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>737</StateNumber>
+      <StateNumber>748</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="266" parent="263" name="workers_pkey">
+    <index id="279" parent="266" name="workers_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16391</ObjectId>
+      <ObjectId>16432</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>737</StateNumber>
+      <StateNumber>748</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="267" parent="263" name="workers_pkey">
+    <key id="280" parent="266" name="workers_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16392</ObjectId>
+      <ObjectId>16433</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>737</StateNumber>
-      <UnderlyingIndexId>16391</UnderlyingIndexId>
+      <StateNumber>748</StateNumber>
+      <UnderlyingIndexId>16432</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

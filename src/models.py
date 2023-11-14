@@ -9,6 +9,9 @@ import enum
 
 
 int_pk = Annotated[int, mapped_column(primary_key=True)]
+created_at = Annotated[datetime.datetime, mapped_column(server_default=text("TIMEZONE('uts', now())"))]
+updated_at = Annotated[datetime.datetime, mapped_column(server_default=text("TIMEZONE('uts', now())"),
+                                                        onupdate=datetime.datetime.utcnow)]
 
 
 class WorkersOrm(Base):
@@ -31,8 +34,7 @@ class ResumesOrm(Base):
     compensations: Mapped[int | None]
     workload: Mapped[Workload]
     worker_id: Mapped[int] = mapped_column(ForeignKey("workers.id", ondelete="CASCADE"))
-    create_at: Mapped[datetime.datetime] = mapped_column(server_default=text("TIMEZONE('uts', now())"))
-    updated_at: Mapped[datetime.datetime] = mapped_column(server_default=text("TIMEZONE('uts', now())"),
-                                                          onupdate=datetime.datetime.utcnow)
+    create_at: Mapped[created_at]
+    updated_at: Mapped[updated_at]
 
 
