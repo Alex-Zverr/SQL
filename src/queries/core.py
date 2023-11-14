@@ -1,13 +1,13 @@
 import asyncio
 from sqlalchemy import text, insert
-from src.database import async_engine, engine, session_factory, async_session_factory
-from src.models import metadata_obj, WorkersOrm
+from src.database import async_engine, engine, session_factory, async_session_factory, Base
+from src.models import WorkersOrm
 
 
 def create_tables():
     engine.echo = False
-    metadata_obj.drop_all(engine)
-    metadata_obj.create_all(engine)
+    Base.metadata.drop_all(engine)
+    Base.metadata.create_all(engine)
     engine.echo = True
 
 
