@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51037213-f01a-4438-b195-5ecb53fafd44" name="Changes" comment="init my_project">
-      <change afterPath="$PROJECT_DIR$/src/queries/orm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a13274e-8cfe-47c8-ac65-deac515c6d96/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a13274e-8cfe-47c8-ac65-deac515c6d96/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a13274e-8cfe-47c8-ac65-deac515c6d96/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a13274e-8cfe-47c8-ac65-deac515c6d96/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
+    <list default="true" id="51037213-f01a-4438-b195-5ecb53fafd44" name="Changes" comment="My home commit e">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/queries/core.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/queries/orm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/queries/orm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +91,7 @@
       <workItem from="1699991735552" duration="63000" />
       <workItem from="1700071192459" duration="13000" />
       <workItem from="1700071302598" duration="242000" />
-      <workItem from="1700071562511" duration="3427000" />
+      <workItem from="1700071562511" duration="7457000" />
     </task>
     <task id="LOCAL-00001" summary="init my_project">
       <created>1699909275667</created>
@@ -114,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699909321851</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="home commit">
+      <created>1700076608954</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700076608954</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +136,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init my_project" />
-    <option name="LAST_COMMIT_MESSAGE" value="init my_project" />
+    <MESSAGE value="home commit" />
+    <MESSAGE value="My home commit" />
+    <MESSAGE value="My home commit e" />
+    <option name="LAST_COMMIT_MESSAGE" value="My home commit e" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SQL$main.coverage" NAME="main Coverage Results" MODIFIED="1699904238820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

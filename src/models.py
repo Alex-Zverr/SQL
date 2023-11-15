@@ -9,8 +9,8 @@ import enum
 
 
 int_pk = Annotated[int, mapped_column(primary_key=True)]
-created_at = Annotated[datetime.datetime, mapped_column(server_default=text("TIMEZONE('uts', now())"))]
-updated_at = Annotated[datetime.datetime, mapped_column(server_default=text("TIMEZONE('uts', now())"),
+created_at = Annotated[datetime.datetime, mapped_column(server_default=text("TIMEZONE('utc', now())"))]
+updated_at = Annotated[datetime.datetime, mapped_column(server_default=text("TIMEZONE('utc', now())"),
                                                         onupdate=datetime.datetime.utcnow)]
 
 
